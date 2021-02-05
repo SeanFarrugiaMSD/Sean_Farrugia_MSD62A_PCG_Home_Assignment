@@ -330,6 +330,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   size: {x: 1, y: 1, z: 1}
+  submeshCount: 0
 --- !u!23 &2072359933
 MeshRenderer:
   m_ObjectHideFlags: 0
