@@ -55,12 +55,15 @@
     <Analyzer Include="C:\Program Files (x86)\Microsoft Visual Studio Tools for Unity\16.0\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Resources\Scripts\ParentShapeGenerator.cs" />
     <Compile Include="Assets\Resources\Scripts\TriangleGenerator.cs" />
+    <Compile Include="Assets\Resources\Scripts\PlaneGenerator.cs" />
+    <Compile Include="Assets\Resources\Scripts\MazeGenerator.cs" />
     <Compile Include="Assets\Resources\Scripts\MeshGenerator.cs" />
     <Compile Include="Assets\Resources\Scripts\CubeGenerator.cs" />
     <Compile Include="Assets\Resources\Scripts\PyramidGenerator.cs" />
-    <Compile Include="Assets\Resources\Scripts\PlaneGenerator.cs" />
-    <Compile Include="Assets\Resources\Scripts\ParentShapeGenerator.cs" />
+    <Compile Include="Assets\Resources\Scripts\PlayerController.cs" />
+    <Compile Include="Assets\Resources\Scripts\FinishBehaviour.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

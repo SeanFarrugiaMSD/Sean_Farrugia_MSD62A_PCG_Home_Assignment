@@ -17,12 +17,25 @@ public class ParentShapeGenerator : MonoBehaviour
 
     //Stores the size of the pyramid generated
     [SerializeField] protected Vector3 size = Vector3.one;
+    public Vector3 Size
+    {
+        get { return size; }
+        set { size = value; }
+    }
 
     //To Store the amount of submeshes in the mesh
     [SerializeField] protected int submeshCount;
 
     //To know if the mesh has been created or not
     protected bool isCreated = false;
+
+    //To Store the colour of a shape
+    protected Color shapeColour;
+    public Color ShapeColour
+    {
+        get { return shapeColour; }
+        set { shapeColour = value; }
+    }
 
     // Start is called before the first frame update
     protected virtual void Start()
@@ -64,11 +77,19 @@ public class ParentShapeGenerator : MonoBehaviour
         for (int i = 0; i < submeshCount; i++)
         {
             //Defining a new material and assigning the Specular Shader to it
-            Material randColMat = new Material(Shader.Find("Specular"));
+            Material matCol= new Material(Shader.Find("Specular"));
 
-            //Assigning a random colour to the material
-            randColMat.color = new Color(Random.Range(0f, 1f), Random.Range(0f, 1f), Random.Range(0f, 1f));
-            materialList.Add(randColMat);
+            //If no shape colour has been assigned, generate a random colour
+            if(shapeColour == new Color(0,0,0,0))
+            {
+                matCol.color = new Color(Random.Range(0f, 1f), Random.Range(0f, 1f), Random.Range(0f, 1f));
+            }
+            else
+            {
+                matCol.color = shapeColour;
+            }
+            
+            materialList.Add(matCol);
         }
 
         //Initialise meshRenderer and assign materialList to the mesh renderer's materials list

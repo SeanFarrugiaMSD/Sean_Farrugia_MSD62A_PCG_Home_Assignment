@@ -6,9 +6,19 @@ public class PlaneGenerator : ParentShapeGenerator
 {
     //Storing the width of the plane
     [SerializeField] int planeWidth = 24;
+    public int PlaneWidth
+    {
+        get { return planeWidth; }
+        set { planeWidth = value; }
+    }
 
     //Storing the height of the plane
     [SerializeField] int planeHeight = 24;
+    public int PlaneHeight
+    {
+        get { return planeHeight; }
+        set { planeHeight = value; }
+    }
 
     // Start is called before the first frame update
     protected override void Start()
