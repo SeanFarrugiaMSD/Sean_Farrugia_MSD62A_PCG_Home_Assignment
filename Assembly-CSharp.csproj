@@ -58,12 +58,13 @@
     <Compile Include="Assets\Resources\Scripts\ParentShapeGenerator.cs" />
     <Compile Include="Assets\Resources\Scripts\TriangleGenerator.cs" />
     <Compile Include="Assets\Resources\Scripts\PlaneGenerator.cs" />
+    <Compile Include="Assets\Resources\Scripts\PlayerController.cs" />
     <Compile Include="Assets\Resources\Scripts\MazeGenerator.cs" />
     <Compile Include="Assets\Resources\Scripts\MeshGenerator.cs" />
     <Compile Include="Assets\Resources\Scripts\CubeGenerator.cs" />
     <Compile Include="Assets\Resources\Scripts\PyramidGenerator.cs" />
-    <Compile Include="Assets\Resources\Scripts\PlayerController.cs" />
     <Compile Include="Assets\Resources\Scripts\FinishBehaviour.cs" />
+    <Compile Include="Assets\Resources\Scripts\RandomSpawner.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

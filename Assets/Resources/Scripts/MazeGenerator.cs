@@ -5,9 +5,9 @@ using UnityEngine;
 public class MazeGenerator : MonoBehaviour
 {
     //Stores the size of the maze generated
-    [SerializeField] Vector3 mazeScale = Vector3.one;
+    [SerializeField] public Vector3 mazeScale = Vector3.one;
 
-    int mazeSize = 52;
+    public int mazeSize = 52;
 
     bool isCreated = false;
 
@@ -72,7 +72,7 @@ public class MazeGenerator : MonoBehaviour
 
     void GenerateBasePlane()
     {
-        //Create the base plane
+        //Generating the base Plane, setting its values and adding the required Components 
         GameObject basePlane = new GameObject("Base_Plane");
         basePlane.AddComponent<PlaneGenerator>();
         basePlane.GetComponent<PlaneGenerator>().Size = mazeScale;
@@ -90,6 +90,7 @@ public class MazeGenerator : MonoBehaviour
 
     void GenerateWall(float cubeX, float cubeZ, float cubeWidth, float cubeHeight)
     {
+        //Generating Cube Objects as WallsGenerating Cube Objects as Walls, setting their values and adding the required Components
         GameObject wallObject = new GameObject("Wall");
         wallObject.transform.position = new Vector3(cubeX * mazeScale.x, 0, cubeZ * mazeScale.z);
         wallObject.AddComponent<CubeGenerator>();
@@ -98,6 +99,8 @@ public class MazeGenerator : MonoBehaviour
         wallObject.AddComponent<BoxCollider>();
         wallObject.GetComponent<BoxCollider>().size = new Vector3(cubeWidth * mazeScale.x, 3 * mazeScale.y, cubeHeight * mazeScale.z) * 2;
         wallObject.transform.SetParent(this.transform);
+
+        wallObject.tag = "mazeWall";
 
         mazeObjectsList.Add(wallObject);
     }

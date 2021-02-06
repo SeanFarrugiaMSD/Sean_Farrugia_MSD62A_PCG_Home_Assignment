@@ -7,12 +7,12 @@ public class PlayerController : MonoBehaviour
     //Movement Speed of Player
     [SerializeField] float moveSpeed = 15f;
 
-    //Starting Position
-    public Vector3 startPosition = new Vector3(5f, 1f, 5f);
-
     // Start is called before the first frame update
     void Start()
     {
+        //Adding the necessary components and their values
+        this.gameObject.tag = "playerObject";
+
         this.gameObject.AddComponent<CubeGenerator>();
         this.gameObject.GetComponent<CubeGenerator>().ShapeColour = new Color(0.5f, 0f, 1f);
 
@@ -21,14 +21,25 @@ public class PlayerController : MonoBehaviour
         
         this.gameObject.AddComponent<BoxCollider>();
         this.gameObject.GetComponent<BoxCollider>().size = new Vector3(1f, 1f, 1f) * 2;
-
-        this.transform.position = startPosition;
     }
 
     // Update is called once per frame
     void Update()
     {
         Move();
+
+        //If Escape is press, the game stops
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            #if UNITY_EDITOR
+                UnityEditor.EditorApplication.isPlaying = false;
+
+            #else
+                Application.Quit();
+
+            #endif
+        }
+
     }
 
     private void Move()
