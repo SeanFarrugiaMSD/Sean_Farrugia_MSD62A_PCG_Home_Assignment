@@ -63,8 +63,9 @@
     <Compile Include="Assets\Resources\Scripts\MeshGenerator.cs" />
     <Compile Include="Assets\Resources\Scripts\CubeGenerator.cs" />
     <Compile Include="Assets\Resources\Scripts\PyramidGenerator.cs" />
-    <Compile Include="Assets\Resources\Scripts\FinishBehaviour.cs" />
     <Compile Include="Assets\Resources\Scripts\RandomSpawner.cs" />
+    <Compile Include="Assets\Resources\Scripts\FinishBehaviour.cs" />
+    <Compile Include="Assets\Resources\Scripts\RoadGenerator.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

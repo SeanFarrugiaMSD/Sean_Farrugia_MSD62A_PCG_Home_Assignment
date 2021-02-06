@@ -67,7 +67,7 @@ public class ParentShapeGenerator : MonoBehaviour
         //Instantiate a new meshGenerator with the amount of the given submesh
         meshGenerator = new MeshGenerator(submeshCount);
 
-        //Child generates as required
+        //Child generates its mesh as required
     }
 
     protected virtual void AddMaterials()
