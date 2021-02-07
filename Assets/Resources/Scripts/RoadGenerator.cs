@@ -56,6 +56,13 @@ public class RoadGenerator : MonoBehaviour
     //To know if the mesh has been created or not
     bool isCreated = false;
 
+    //Storing the vertices representing each segment;
+    List<Vector3> segmentVertices;
+    public List<Vector3> SegmentVertices
+    {
+        get { return segmentVertices; }
+    }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -90,7 +97,7 @@ public class RoadGenerator : MonoBehaviour
         float segmentDegrees = 360f / roadSegments;
 
         //To Store the vertices representing each segment
-        List<Vector3> segmentVertices = new List<Vector3>();
+        segmentVertices = new List<Vector3>();
 
         //Locate the segments of the circle, create a vertex representing it and add it to the vertex list
         for (float degrees = 0; degrees < 360f; degrees += segmentDegrees)
@@ -145,13 +152,13 @@ public class RoadGenerator : MonoBehaviour
     {
         //Generating Road's Middle White Line
         Vector3 startingPartPos = Vector3.zero;
-        Vector3 parthWidth = Vector3.forward * midLineWidth;
-        GenerateSegmentPart(vPrev, vCurr, vNext, startingPartPos, parthWidth, 0);
+        Vector3 partWidth = Vector3.forward * midLineWidth;
+        GenerateSegmentPart(vPrev, vCurr, vNext, startingPartPos, partWidth, 0);
 
         //Generating the Road
-        startingPartPos += parthWidth;
-        parthWidth = Vector3.forward * roadWidth;
-        GenerateSegmentPart(vPrev, vCurr, vNext, startingPartPos, parthWidth, 1);
+        startingPartPos += partWidth;
+        partWidth = Vector3.forward * roadWidth;
+        GenerateSegmentPart(vPrev, vCurr, vNext, startingPartPos, partWidth, 1);
 
         int stripeSubmesh = 2;
 
@@ -163,19 +170,19 @@ public class RoadGenerator : MonoBehaviour
         stripeCheck = !stripeCheck;
 
         //Generating the Barrier - Vertical
-        startingPartPos += parthWidth;
-        parthWidth = Vector3.up * barrierHeight;
-        GenerateSegmentPart(vPrev, vCurr, vNext, startingPartPos, parthWidth, stripeSubmesh);
+        startingPartPos += partWidth;
+        partWidth = Vector3.up * barrierHeight;
+        GenerateSegmentPart(vPrev, vCurr, vNext, startingPartPos, partWidth, stripeSubmesh);
 
         //Generating the Barrier - Horizontal
-        startingPartPos += parthWidth;
-        parthWidth = Vector3.forward * barrierWidth;
-        GenerateSegmentPart(vPrev, vCurr, vNext, startingPartPos, parthWidth, stripeSubmesh);
+        startingPartPos += partWidth;
+        partWidth = Vector3.forward * barrierWidth;
+        GenerateSegmentPart(vPrev, vCurr, vNext, startingPartPos, partWidth, stripeSubmesh);
 
         //Generating the Barrier - Back - Vertical
-        startingPartPos += parthWidth;
-        parthWidth = Vector3.down * barrierHeight;
-        GenerateSegmentPart(vPrev, vCurr, vNext, startingPartPos, parthWidth, stripeSubmesh);
+        startingPartPos += partWidth;
+        partWidth = Vector3.down * barrierHeight;
+        GenerateSegmentPart(vPrev, vCurr, vNext, startingPartPos, partWidth, stripeSubmesh);
     }
 
     void GenerateSegmentPart(Vector3 pPrev, Vector3 pCurr, Vector3 pNext, Vector3 startingPartPos, Vector3 partWidth, int submesh)
@@ -203,13 +210,13 @@ public class RoadGenerator : MonoBehaviour
             //Creating the triangles making up the quad
             if (directionScale == 1)
             {
-                meshGenerator.AddTriangleToMesh(v0, v2, v1, submesh);
-                meshGenerator.AddTriangleToMesh(v0, v3, v2, submesh);
+                meshGenerator.AddTriangleToMesh(v0, v1, v2, submesh);
+                meshGenerator.AddTriangleToMesh(v0, v2, v3, submesh);
             }
             else if (directionScale == -1)
             {
-                meshGenerator.AddTriangleToMesh(v0, v1, v2, submesh);
-                meshGenerator.AddTriangleToMesh(v0, v2, v3, submesh);
+                meshGenerator.AddTriangleToMesh(v0, v2, v1, submesh);
+                meshGenerator.AddTriangleToMesh(v0, v3, v2, submesh);
             }
 
         }

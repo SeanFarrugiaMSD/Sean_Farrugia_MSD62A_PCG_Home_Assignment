@@ -267,7 +267,7 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!1 &1008749032
+--- !u!1 &602258046
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -275,36 +275,36 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1008749034}
-  - component: {fileID: 1008749033}
+  - component: {fileID: 602258048}
+  - component: {fileID: 602258047}
   m_Layer: 0
-  m_Name: Scripts
+  m_Name: Generator_Script
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1008749033
+--- !u!114 &602258047
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1008749032}
+  m_GameObject: {fileID: 602258046}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2165bbbc97960d747858cdcbf35305e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!4 &1008749034
+--- !u!4 &602258048
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1008749032}
+  m_GameObject: {fileID: 602258046}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 25.480993, y: -6.4938927, z: 26.012371}
+  m_LocalPosition: {x: -33.7064, y: -434.9906, z: -29.505402}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}

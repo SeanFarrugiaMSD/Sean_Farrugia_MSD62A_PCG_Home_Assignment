@@ -56,18 +56,49 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Resources\Scripts\ParentShapeGenerator.cs" />
+    <Compile Include="Assets\_ImportedAssets\Standard Assets\Vehicles\Car\Scripts\Suspension.cs" />
     <Compile Include="Assets\Resources\Scripts\TriangleGenerator.cs" />
-    <Compile Include="Assets\Resources\Scripts\PlaneGenerator.cs" />
-    <Compile Include="Assets\Resources\Scripts\PlayerController.cs" />
-    <Compile Include="Assets\Resources\Scripts\MazeGenerator.cs" />
-    <Compile Include="Assets\Resources\Scripts\MeshGenerator.cs" />
-    <Compile Include="Assets\Resources\Scripts\CubeGenerator.cs" />
-    <Compile Include="Assets\Resources\Scripts\PyramidGenerator.cs" />
-    <Compile Include="Assets\Resources\Scripts\RandomSpawner.cs" />
-    <Compile Include="Assets\Resources\Scripts\FinishBehaviour.cs" />
+    <Compile Include="Assets\_ImportedAssets\Standard Assets\Vehicles\Car\Scripts\BrakeLight.cs" />
+    <Compile Include="Assets\_ImportedAssets\Standard Assets\Vehicles\Car\Scripts\SkidTrail.cs" />
+    <Compile Include="Assets\_ImportedAssets\Standard Assets\CrossPlatformInput\Scripts\VirtualInput.cs" />
     <Compile Include="Assets\Resources\Scripts\RoadGenerator.cs" />
+    <Compile Include="Assets\_ImportedAssets\Standard Assets\CrossPlatformInput\Scripts\TiltInput.cs" />
+    <Compile Include="Assets\Resources\Scripts\Task3RandomSpawner.cs" />
+    <Compile Include="Assets\_ImportedAssets\Standard Assets\Vehicles\Car\Scripts\WheelEffects.cs" />
+    <Compile Include="Assets\_ImportedAssets\Standard Assets\Vehicles\Car\Scripts\CarUserControl.cs" />
+    <Compile Include="Assets\Resources\Scripts\PlaneGenerator.cs" />
+    <Compile Include="Assets\Resources\Scripts\Task1PlayerController.cs" />
+    <Compile Include="Assets\_ImportedAssets\Standard Assets\CrossPlatformInput\Scripts\Joystick.cs" />
+    <Compile Include="Assets\_ImportedAssets\Standard Assets\CrossPlatformInput\Scripts\InputAxisScrollbar.cs" />
+    <Compile Include="Assets\_ImportedAssets\Standard Assets\CrossPlatformInput\Scripts\AxisTouchButton.cs" />
+    <Compile Include="Assets\Resources\Scripts\MazeGenerator.cs" />
+    <Compile Include="Assets\_ImportedAssets\Standard Assets\CrossPlatformInput\Scripts\ButtonHandler.cs" />
+    <Compile Include="Assets\_ImportedAssets\Standard Assets\CrossPlatformInput\Scripts\MobileControlRig.cs" />
+    <Compile Include="Assets\Resources\Scripts\MeshGenerator.cs" />
+    <Compile Include="Assets\_ImportedAssets\Standard Assets\Vehicles\Car\Scripts\CarController.cs" />
+    <Compile Include="Assets\_ImportedAssets\Standard Assets\Vehicles\Car\Scripts\CarAIControl.cs" />
+    <Compile Include="Assets\Resources\Scripts\CubeGenerator.cs" />
+    <Compile Include="Assets\_ImportedAssets\Standard Assets\Vehicles\Car\Scripts\CarSelfRighting.cs" />
+    <Compile Include="Assets\_ImportedAssets\Standard Assets\CrossPlatformInput\Scripts\CrossPlatformInputManager.cs" />
+    <Compile Include="Assets\Resources\Scripts\PyramidGenerator.cs" />
+    <Compile Include="Assets\_ImportedAssets\Standard Assets\Vehicles\Car\Scripts\Mudguard.cs" />
+    <Compile Include="Assets\_ImportedAssets\Standard Assets\Vehicles\Car\Scripts\CarAudio.cs" />
+    <Compile Include="Assets\Resources\Scripts\Task1RandomSpawner.cs" />
+    <Compile Include="Assets\_ImportedAssets\Standard Assets\CrossPlatformInput\Scripts\TouchPad.cs" />
+    <Compile Include="Assets\_ImportedAssets\Standard Assets\CrossPlatformInput\Scripts\PlatformSpecific\MobileInput.cs" />
+    <Compile Include="Assets\_ImportedAssets\Standard Assets\CrossPlatformInput\Scripts\PlatformSpecific\StandaloneInput.cs" />
+    <Compile Include="Assets\Resources\Scripts\Task1FinishBehaviour.cs" />
+    <Compile Include="Assets\Resources\Scripts\Task3GameManager.cs" />
+    <Compile Include="Assets\Resources\Scripts\Task3CheckPointBehaviour.cs" />
+    <Compile Include="Assets\Resources\Scripts\Task3FinishBehaviour.cs" />
+    <Compile Include="Assets\Resources\Scripts\Task3QuitButton.cs" />
   </ItemGroup>
   <ItemGroup>
+     <None Include="Assets\_ImportedAssets\Standard Assets\CrossPlatformInput\CrossPlatformInputGuidelines.txt" />
+     <None Include="Assets\_ImportedAssets\Standard Assets\Vehicles\Car\CarGuidelines.txt" />
+     <None Include="Assets\_ImportedAssets\Standard Assets\Vehicles\Car\Shaders\ReflectiveDiffuseSpecTransp.shader" />
+     <None Include="Assets\_ImportedAssets\Standard Assets\Vehicles\Car\Shaders\DiffuseReflectiveShader.shader" />
+     <None Include="Assets\_ImportedAssets\Standard Assets\Vehicles\Car\Shaders\ReflectiveDiffuseSpec.shader" />
     <Reference Include="UnityEngine">
       <HintPath>C:\Program Files\Unity\Hub\Editor\2020.1.5f1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
     </Reference>

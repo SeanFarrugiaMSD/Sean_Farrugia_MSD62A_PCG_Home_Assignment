@@ -37,6 +37,13 @@ public class ParentShapeGenerator : MonoBehaviour
         set { shapeColour = value; }
     }
 
+    protected string materialType = "";
+    public string MaterialType
+    {
+        get { return materialType; }
+        set { materialType = value; }
+    }
+
     // Start is called before the first frame update
     protected virtual void Start()
     {
@@ -76,8 +83,17 @@ public class ParentShapeGenerator : MonoBehaviour
 
         for (int i = 0; i < submeshCount; i++)
         {
-            //Defining a new material and assigning the Specular Shader to it
-            Material matCol= new Material(Shader.Find("Specular"));
+            Material matCol;
+
+            //If no material shader was specified, use Specular Shader
+            if (materialType == "")
+            {
+                matCol = new Material(Shader.Find("Specular"));
+            }
+            else
+            {
+                matCol = new Material(Shader.Find(materialType));
+            }
 
             //If no shape colour has been assigned, generate a random colour
             if(shapeColour == new Color(0,0,0,0))
