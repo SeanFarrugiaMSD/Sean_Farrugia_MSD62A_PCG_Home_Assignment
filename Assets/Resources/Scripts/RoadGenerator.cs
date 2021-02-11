@@ -10,9 +10,19 @@ public class RoadGenerator : MonoBehaviour
 {
     //To Store the road's radius
     [SerializeField] float roadRadius = 30f;
+    public float RoadRadius
+    {
+        get { return roadRadius; }
+        set { roadRadius = value; }
+    }
 
     //Amount of segments the road will be divided into
     [SerializeField] float roadSegments = 300f;
+    public float RoadSegments
+    {
+        get { return roadSegments; }
+        set { roadSegments = value; }
+    }
 
     //The middle white line width
     [SerializeField] float midLineWidth = 0.3f;
@@ -31,15 +41,35 @@ public class RoadGenerator : MonoBehaviour
 
     //Determines how wavy the road is
     [SerializeField] float roadWaviness = 5f;
+    public float RoadWaviness
+    {
+        get { return roadWaviness; }
+        set { roadWaviness = value; }
+    }
 
     //Determines the size of the wave
-    [SerializeField] float waveScale = 0.1f; 
+    [SerializeField] float waveScale = 0.1f;
+    public float WaveScale
+    {
+        get { return waveScale; }
+        set { waveScale = value; }
+    }
 
     //The Wave starting point
     [SerializeField] Vector2 waveOffset;
+    public Vector2 WaveOffset
+    {
+        get { return waveOffset; }
+        set { waveOffset = value; }
+    }
 
     //How the wave steps from a wave to another
-    [SerializeField] Vector2 waveStep = new Vector2(0.01f, 0.01f); 
+    [SerializeField] Vector2 waveStep = new Vector2(0.01f, 0.01f);
+    public Vector2 WaveStep
+    {
+        get { return waveStep; }
+        set { waveStep = value; }
+    }
 
     //Used to make the barrier have alternating materials
     [SerializeField] bool stripeCheck = true;
@@ -62,6 +92,8 @@ public class RoadGenerator : MonoBehaviour
     {
         get { return segmentVertices; }
     }
+
+    
 
     // Start is called before the first frame update
     void Start()

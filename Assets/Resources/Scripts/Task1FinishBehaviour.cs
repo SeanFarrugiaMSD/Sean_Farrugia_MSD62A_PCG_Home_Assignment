@@ -15,7 +15,7 @@ public class Task1FinishBehaviour : MonoBehaviour
 
         //Adding the necessary Components and their values
         this.gameObject.AddComponent<PyramidGenerator>();
-        this.gameObject.GetComponent<PyramidGenerator>().ShapeColour = new Color(0f, 1f, 0f);
+        this.gameObject.GetComponent<PyramidGenerator>().ShapeColour = new Color(1f, 0f, 0f);
         this.gameObject.GetComponent<PyramidGenerator>().Size = new Vector3(1f, 1f, 1f) * 2;
 
         this.gameObject.AddComponent<BoxCollider>();

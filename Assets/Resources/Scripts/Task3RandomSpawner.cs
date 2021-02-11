@@ -6,12 +6,13 @@ public class Task3RandomSpawner : MonoBehaviour
 {
     GameObject carPrefab;
     RoadGenerator myRoadGen;
+    
 
     // Start is called before the first frame update
     void Start()
     {
         carPrefab = Resources.Load<GameObject>("Prefabs/Car");
-        myRoadGen = GameObject.FindObjectOfType<RoadGenerator>();
+        RandomGenerateMap();
     }
 
     public void StartLevel()
@@ -50,5 +51,23 @@ public class Task3RandomSpawner : MonoBehaviour
             checkpointObject.GetComponent<BoxCollider>().isTrigger = true;
         }
 
+    }
+
+    void RandomGenerateMap()
+    {
+        GameObject planeObject = new GameObject("Plane Object");
+        PlaneGenerator myPlaneGen = planeObject.AddComponent<PlaneGenerator>();
+        myPlaneGen.Size = new Vector3(40f,0f, 40f);
+        planeObject.transform.position = new Vector3(-450f, -1f, -450f);
+
+        GameObject roadObject = new GameObject("Road_Object");
+        myRoadGen = roadObject.AddComponent<RoadGenerator>();
+
+        myRoadGen.RoadRadius = Random.Range(80, 111);
+        myRoadGen.RoadSegments = Random.Range(260, 360);
+        myRoadGen.RoadWaviness = Random.Range(80, 201);
+        myRoadGen.WaveScale = Random.Range(1.6f, 2.4f);
+        myRoadGen.WaveOffset = new Vector2(Random.Range(0.65f, 1.65f), Random.Range(1.35f, 2.5f));
+        myRoadGen.WaveStep = new Vector2(Random.Range(0.01f, 0.02f), Random.Range(0.01f, 0.03f));
     }
 }

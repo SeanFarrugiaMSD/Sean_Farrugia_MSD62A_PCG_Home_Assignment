@@ -4,21 +4,17 @@ using UnityEngine;
 
 public class Task1RandomSpawner : MonoBehaviour
 {
-    GameObject playerPrefab;
-    GameObject finishPrefab;
     GameObject playerObject;
+    GameObject finishObject;
 
     MazeGenerator mazeObject;
 
     // Start is called before the first frame update
     void Start()
     {
-        //To Store the Player and Finish Prefabs to Instantiate
-        playerPrefab = Resources.Load<GameObject>("Prefabs/Player_Object");
-        finishPrefab = Resources.Load<GameObject>("Prefabs/Finish_Object");
-
         //Get MazeObject to spawn in it
         mazeObject = GameObject.Find("Maze_Object").GetComponent<MazeGenerator>();
+        playerObject = Resources.Load<GameObject>("Prefabs/Player_Object");
 
         SpawnPlayer();
         SpawnFinish();
@@ -31,7 +27,13 @@ public class Task1RandomSpawner : MonoBehaviour
         float randZ = Random.Range(2, mazeObject.mazeSize - 2 * mazeObject.mazeScale.z);
 
         //Spawn Player
-        playerObject = Instantiate(playerPrefab, new Vector3(randX, 1, randZ), Quaternion.identity);
+        Instantiate(playerObject, new Vector3(randX, 0, randZ), Quaternion.identity);
+
+        GameObject startMarker = new GameObject();
+        startMarker.AddComponent<PyramidGenerator>();
+        startMarker.GetComponent<PyramidGenerator>().ShapeColour = new Color(0f, 0.5f, 0f);
+        startMarker.GetComponent<PyramidGenerator>().Size = new Vector3(1f, 1f, 1f) * 2;
+        startMarker.transform.position = new Vector3(randX, 0, randZ);
     }
 
     public void SpawnFinish()
@@ -43,8 +45,10 @@ public class Task1RandomSpawner : MonoBehaviour
         //Check whether the random position is far enough from the player
         if(Vector3.Distance(new Vector3(randX, 0, randZ), playerObject.transform.position) > (mazeObject.mazeSize - 6) / 2)
         {
-            Instantiate(finishPrefab, new Vector3(randX, 0, randZ), Quaternion.identity);
-            
+            finishObject = new GameObject();
+            finishObject.AddComponent<Task1FinishBehaviour>();
+            finishObject.transform.position = new Vector3(randX, 0, randZ);
+
         }
         //If not, respawn
         else
