@@ -9,7 +9,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{D384FECD-756A-FCB4-39A3-28BC0B5EAA63}</ProjectGuid>
+    <ProjectGuid>{024F82B9-A669-DEEB-872F-32BB6079B696}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -80,6 +80,7 @@
     <Compile Include="Assets\Resources\Scripts\LandscapeEnvironmentEditor.cs" />
     <Compile Include="Assets\_ImportedAssets\Standard Assets\Utility\ParticleSystemDestroyer.cs" />
     <Compile Include="Assets\_ImportedAssets\Standard Assets\Utility\SimpleMouseRotator.cs" />
+    <Compile Include="Assets\Resources\Scripts\Task2GameManager.cs" />
     <Compile Include="Assets\_ImportedAssets\Standard Assets\Utility\CurveControlledBob.cs" />
     <Compile Include="Assets\Resources\Scripts\PlaneGenerator.cs" />
     <Compile Include="Assets\Resources\Scripts\Task1PlayerController.cs" />
@@ -148,7 +149,6 @@
     <Compile Include="Assets\_ImportedAssets\Standard Assets\Utility\FOVKick.cs" />
     <Compile Include="Assets\Resources\Scripts\Task1FinishBehaviour.cs" />
     <Compile Include="Assets\_ImportedAssets\Standard Assets\Utility\AutoMobileShaderSwitch.cs" />
-    <Compile Include="Assets\Resources\Scripts\Task2GameManager.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\_ImportedAssets\Standard Assets\CrossPlatformInput\CrossPlatformInputGuidelines.txt" />
