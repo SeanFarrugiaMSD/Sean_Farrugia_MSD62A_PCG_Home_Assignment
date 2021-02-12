@@ -291,8 +291,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1570192556}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: -10}
+  m_LocalRotation: {x: -0.12995489, y: 0.7524859, z: -0.15581074, w: -0.6265779}
+  m_LocalPosition: {x: 298.603, y: 325.16064, z: 850.5478}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -312,6 +312,8 @@ GameObject:
   - component: {fileID: 1908449822}
   - component: {fileID: 1908449821}
   - component: {fileID: 1908449826}
+  - component: {fileID: 1908449827}
+  - component: {fileID: 1908449828}
   m_Layer: 8
   m_Name: Terrain
   m_TagString: Untagged
@@ -333,11 +335,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   treeDataList:
   - treeMesh: {fileID: 100000, guid: c91c1eb85782d5748ace27eb4d7415bb, type: 3}
-    minHeight: 0
-    maxHeight: 0
-  - treeMesh: {fileID: 100016, guid: 469edab27ab6d004d84af2c4a851bd7f, type: 3}
     minHeight: 0.5
-    maxHeight: 0.8
+    maxHeight: 0.7
+  - treeMesh: {fileID: 100016, guid: 469edab27ab6d004d84af2c4a851bd7f, type: 3}
+    minHeight: 0.6
+    maxHeight: 0.9
   maxTrees: 15000
   treeSpacing: 12
   randomXRange: 3
@@ -355,14 +357,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3b52c2413a87064487cf9b068422bd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minRandomHeightRange: 0
-  maxRandomHeightRange: 0.01
-  perlinNoiseWidthScale: 0.01
-  perlinNoiseHeightScale: 0.01
+  perlNoiseRandX: 0.01
+  perlNoiseRandZ: 0.01
+  heightMapsSamples: []
   heightMapImage: {fileID: 0}
   heightMapScale: {x: 1.99, y: 0.2, z: 1.99}
   terrainTextureDataList:
-  - terrainTexture: {fileID: 2800000, guid: 216e2729631e003468211108545a08f1, type: 3}
+  - terrainTexture: {fileID: 2800000, guid: c454ab598058d19449addc55a13cc73a, type: 3}
     minHeight: 0
     maxHeight: 0.01
     tileSize: {x: 500, y: 500}
@@ -449,3 +450,30 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 469188ca51bc99a42b28ccf909b73191, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1908449827
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1908449820}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db1b56be7ab07b749afee25fc14ca6eb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxClouds: 120
+--- !u!114 &1908449828
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1908449820}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71b42ee56af573642ac38c0926867fe2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHail: 30
+  hailHeight: 1

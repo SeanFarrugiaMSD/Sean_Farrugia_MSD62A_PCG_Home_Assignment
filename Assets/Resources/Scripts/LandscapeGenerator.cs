@@ -13,24 +13,18 @@ class TerrainTextureData
 
 public class LandscapeGenerator : MonoBehaviour
 {
-    private Terrain terrain;
     private TerrainData terrainData;
-
-    //Variables for generating terrain using random values
-    [SerializeField]
-    private float minRandomHeightRange = 0f;
-
-    [SerializeField]
-    private float maxRandomHeightRange = 0.01f;
 
     //Variables for generating terrain using perlin noise
     [SerializeField]
-    private float perlinNoiseWidthScale = 0.01f;
+    private float perlNoiseRandX = 0.01f;
 
     [SerializeField]
-    private float perlinNoiseHeightScale = 0.01f;
+    private float perlNoiseRandZ = 0.01f;
 
-    //Variables for pre-built heightmap
+    [SerializeField]
+    List<Texture2D> heightMapsSamples;
+
     [SerializeField]
     private Texture2D heightMapImage;
 
@@ -50,17 +44,17 @@ public class LandscapeGenerator : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        List<Texture2D> heightMapsSamples = new List<Texture2D>();
+        //To Store the list of HeightMaps to load onto the terrain
+        heightMapsSamples = new List<Texture2D>();
         heightMapsSamples.Add(Resources.Load<Texture2D>("Textures/Terrain_HeightMap_1"));
         heightMapsSamples.Add(Resources.Load<Texture2D>("Textures/Terrain_HeightMap_2"));
         heightMapsSamples.Add(Resources.Load<Texture2D>("Textures/Terrain_HeightMap_3"));
 
         heightMapImage = heightMapsSamples[Random.Range(0, 3)];
-        perlinNoiseWidthScale = Random.Range(0f, 0.008f);
-        perlinNoiseHeightScale = Random.Range(0f, 0.008f);
+        perlNoiseRandX = Random.Range(0f, 0.008f);
+        perlNoiseRandZ = Random.Range(0f, 0.008f);
 
-        terrain = this.GetComponent<Terrain>();
-        terrainData = Terrain.activeTerrain.terrainData;
+        terrainData = GetComponent<Terrain>().terrainData;
 
         GenerateTerrain();
 
@@ -86,7 +80,6 @@ public class LandscapeGenerator : MonoBehaviour
                 float currentHeight = heightMapImage.GetPixel((int)(width * heightMapScale.x), (int)(height * heightMapScale.z)).grayscale * heightMapScale.y;
 
                 heightMap[width, height] = currentHeight;
-                //heightMap[width, height] = Random.Range(minRandomHeightRange, heightMap[width, height] + maxRandomHeightRange);
             }
         }
 
@@ -98,7 +91,7 @@ public class LandscapeGenerator : MonoBehaviour
         {
             for (int height = 0; height < terrainData.heightmapResolution; height++)
             {
-                heightMap[width, height] += Mathf.PerlinNoise(width * perlinNoiseWidthScale, height * perlinNoiseHeightScale);
+                heightMap[width, height] += Mathf.PerlinNoise(width * perlNoiseRandX, height * perlNoiseRandZ);
             }
         }
 
